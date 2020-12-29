@@ -9,6 +9,7 @@
 
 #include "logging/WriterBackend.h"
 #include "threading/formatters/JSON.h"
+#include "Desc.h"
 
 namespace logging { namespace writer {
 
@@ -33,7 +34,7 @@ protected:
     virtual bool DoHeartbeat(double network_time, double current_time);
 
 private:
-    string GetConfigValue(const WriterInfo& info, const string name) const;
+    std::string GetConfigValue(const WriterInfo& info, const std::string name) const;
 
     threading::formatter::JSON* formatter;
 
@@ -41,7 +42,7 @@ private:
     void* zmq_publisher;
     const char* log_path;
 
-    string endpoint;
+    std::string endpoint;
     int zmq_hwm;
     int zmq_linger;
 };

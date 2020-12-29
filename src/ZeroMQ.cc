@@ -11,7 +11,7 @@
 
 using namespace logging;
 using namespace writer;
-
+using namespace std;
 // Constructor is called once for each log filter that uses this log writer.
 ZeroMQ::ZeroMQ(WriterFrontend* frontend): WriterBackend(frontend), formatter(nullptr), zmq_context(nullptr), zmq_publisher(nullptr)
 {
